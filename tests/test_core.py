@@ -75,7 +75,12 @@ class RulesTest(unittest.TestCase):
 
     def test_corridors(self):
         self.assertEqual(R.corridor_buffer_m({"highway": "motorway"}, RULES), 35)
-        self.assertEqual(R.corridor_buffer_m({"highway": "motorway", "maxspeed": "50"}, RULES), 35)
+        self.assertEqual(R.corridor_buffer_m({"highway": "motorway", "maxspeed": "100"}, RULES), 35)
+        # Begin Blvd case: motorway signed at the 80 km/h urban ceiling is not a corridor
+        self.assertEqual(R.corridor_buffer_m({"highway": "motorway", "maxspeed": "80"}, RULES), 0)
+        self.assertEqual(R.corridor_buffer_m({"highway": "motorway", "maxspeed": "80", "tunnel": "yes"}, RULES, 3000), 30)
+        self.assertEqual(R.corridor_buffer_m({"highway": "motorway", "maxspeed": "IL:motorway"}, RULES), 35)
+        self.assertEqual(R.corridor_buffer_m({"highway": "motorway_link", "maxspeed": "50"}, RULES), 15)
         self.assertEqual(R.corridor_buffer_m({"highway": "trunk"}, RULES), 0)
         self.assertEqual(R.corridor_buffer_m({"highway": "trunk", "maxspeed": "80"}, RULES), 0)  # urban ceiling
         self.assertEqual(R.corridor_buffer_m({"highway": "trunk", "maxspeed": "90"}, RULES), 25)

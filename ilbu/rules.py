@@ -53,7 +53,9 @@ def has_non_urban_zone(tags, rules):
 def corridor_buffer_m(tags, rules, length_m=None):
     """Buffer half-width in metres if the way is a fast-road corridor, else 0.
 
-    * motorway / motorway_link: always.
+    * motorway / motorway_link: always, except a motorway mainline with a
+      numeric maxspeed <= 80 (motorwayExemptClasses), which falls back to the
+      zone and tunnel rules.
     * trunk / primary (+ links): only when signed above the urban ceiling
       (numeric maxspeed > 80 km/h, reg. 54(e1)) or tagged with a non-urban
       zone code (IL:rural / IL:motorway).
@@ -61,12 +63,23 @@ def corridor_buffer_m(tags, rules, length_m=None):
       always (Carmel Tunnels style; GNSS gap handling is in the app).
     """
     hw = tags.get("highway")
+    sp = maxspeed_kmh(tags.get("maxspeed"))
     if hw in rules["corridorAlways"]:
-        return float(rules["corridorAlways"][hw])
+        # A motorway mainline signed at or below the urban ceiling (e.g. Begin
+        # Blvd, Jerusalem: highway=motorway, maxspeed=80) can legally be urban:
+        # it is a corridor only via the zone / tunnel rules below.
+        if not (hw in rules["motorwayExemptClasses"] and sp is not None
+                and sp <= rules["conditionalMaxspeedOverKmh"]):
+            return float(rules["corridorAlways"][hw])
+        if has_non_urban_zone(tags, rules):
+            return float(rules["corridorAlways"][hw])
+        if tags.get("tunnel") in ("yes", "building_passage") and length_m is not None \
+                and length_m >= rules["tunnelCorridorMinLenM"]:
+            return float(rules["tunnelCorridorBufferM"])
+        return 0.0
     if hw not in rules["corridorConditional"]:
         return 0.0
     base = float(rules["corridorConditional"][hw])
-    sp = maxspeed_kmh(tags.get("maxspeed"))
     if sp is not None and sp > rules["conditionalMaxspeedOverKmh"]:
         return base
     if has_non_urban_zone(tags, rules):

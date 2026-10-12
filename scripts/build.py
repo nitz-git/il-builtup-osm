@@ -97,13 +97,15 @@ def main():
     bm = [pj.to_m(g) for _, g in builtup]
     im = [pj.to_m(g) for _, g in industrial]
     corridors = []
-    corr_stats = {"motorwayKm": 0.0, "conditionalKm": 0.0, "tunnelKm": 0.0, "overridden": 0}
+    corr_stats = {"motorwayKm": 0.0, "conditionalKm": 0.0, "tunnelKm": 0.0, "overridden": 0, "motorwayExemptKm": 0.0}
     for wid, tags, g in ways:
         gm = pj.to_m(g)
         w = R.corridor_buffer_m(tags, rules, gm.length)
         w2 = R.apply_overrides(wid, w, ovr)
         if w2 != w:
             corr_stats["overridden"] += 1
+        if w2 == 0 and tags.get("highway") == "motorway":
+            corr_stats["motorwayExemptKm"] += gm.length / 1000
         if w2 > 0:
             corridors.append((gm, w2))
             hw = tags.get("highway", "")

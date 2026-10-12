@@ -19,15 +19,18 @@ Implemented in `ilbu/rules.py` and `ilbu/geom.py`; all numbers in
 1. **Built-up footprint** = union of OSM areas with
    `landuse=residential|commercial|retail`, or with
    `place=city|town|village|hamlet|suburb|quarter|neighbourhood|isolated_dwelling`
-   **unless** the object also has `boundary` or `admin_level` (a place tag on an
-   administrative boundary describes jurisdiction, which includes open roads,
-   not the built-up footprint).
+   **unless** the object has `admin_level` or `boundary=administrative|political|census`
+   (jurisdiction, which includes open roads, not the built-up footprint).
+   `boundary=place` relations (the Israeli locality polygons, `type=boundary`)
+   are the settlement extent and are kept.
 2. `landuse=industrial` areas are added only if they come within 50 m of the
    footprint (in-town industrial zones); isolated industrial parks are left out.
 3. Morphological closing of 30 m merges neighbourhood polygons; holes smaller
    than 2 km² are filled (in-town parks stay urban).
 4. **Fast-road corridors** are subtracted, as flat-capped buffers (half-width):
-   `motorway` 35 m, `motorway_link` 15 m always; `trunk`/`primary` 25 m and their
+   `motorway` 35 m, `motorway_link` 15 m always, except a `motorway` mainline
+   with a numeric `maxspeed` of 80 or less (signed at the urban ceiling, e.g.
+   Begin Blvd), which is cut only via the zone or tunnel rules; `trunk`/`primary` 25 m and their
    links 12 m only when signed above the 80 km/h urban ceiling (numeric
    `maxspeed` > 80) or tagged with a non-urban zone code (`IL:rural`,
    `IL:motorway` in `maxspeed`, `maxspeed:type`, `source:maxspeed` or

@@ -24,6 +24,7 @@
     "industrialLanduse": ["industrial"],
     "industrialAdjacencyM": 50,
     "corridorAlways": {"motorway": 35, "motorway_link": 15},
+    "motorwayExemptClasses": ["motorway"],
     "corridorConditional": {"trunk": 25, "trunk_link": 12, "primary": 25, "primary_link": 12},
     "conditionalMaxspeedOverKmh": 80,
     "nonUrbanZoneValues": ["IL:rural", "IL:motorway"],
