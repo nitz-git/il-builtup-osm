@@ -1,0 +1,33 @@
+id,group,expected,confidence,lat,lon,snap,snap_radius_m,note
+ayalon-01,corridor_ayalon,non_urban,high,32.1005,34.8060,highway~^motorway$&ref~(^|;)20($|;),400,Ayalon at Rokach/Yarkon
+ayalon-02,corridor_ayalon,non_urban,high,32.0840,34.7985,highway~^motorway$&ref~(^|;)20($|;),400,Ayalon at Arlozorov/Savidor
+ayalon-03,corridor_ayalon,non_urban,high,32.0735,34.7930,highway~^motorway$&ref~(^|;)20($|;),400,Ayalon at HaShalom/Azrieli
+ayalon-04,corridor_ayalon,non_urban,high,32.0620,34.7900,highway~^motorway$&ref~(^|;)20($|;),400,Ayalon at HaHagana
+ayalon-05,corridor_ayalon,non_urban,high,32.0545,34.7905,highway~^motorway$&ref~(^|;)20($|;),400,Ayalon at La Guardia
+ayalon-06,corridor_ayalon,non_urban,high,32.0440,34.7880,highway~^motorway$&ref~(^|;)20($|;),400,Ayalon at Kibbutz Galuyot
+ayalon-07,corridor_ayalon,non_urban,high,32.0300,34.7870,highway~^motorway$&ref~(^|;)20($|;),500,Ayalon at Holon junction
+ayalon-08,corridor_ayalon,non_urban,high,32.1150,34.8130,highway~^motorway$&ref~(^|;)20($|;),500,Ayalon north of Yarkon
+route1-01,corridor_route1,non_urban,high,31.7960,35.1580,highway~^motorway$&ref~(^|;)1($|;),600,Route 1 at Motza
+route1-02,corridor_route1,non_urban,high,31.7930,35.1800,highway~^(motorway|trunk)$&ref~(^|;)1($|;),600,Route 1 Jerusalem entrance
+route1-03,corridor_route1,non_urban,high,31.8155,35.0215,highway~^motorway$&ref~(^|;)1($|;),600,Route 1 at Sha'ar HaGai
+route1-04,corridor_route1,non_urban,high,31.8370,34.9830,highway~^motorway$&ref~(^|;)1($|;),600,Route 1 at Latrun
+route2-01,corridor_route2,non_urban,high,32.1700,34.8170,highway~^motorway$&ref~(^|;)2($|;),600,Route 2 at Herzliya
+route2-02,corridor_route2,non_urban,high,32.2700,34.8460,highway~^motorway$&ref~(^|;)2($|;),600,Route 2 at Netanya Poleg
+route2-03,corridor_route2,non_urban,high,32.3200,34.8620,highway~^motorway$&ref~(^|;)2($|;),600,Route 2 at Netanya
+route2-04,corridor_route2,non_urban,high,32.7700,34.9600,highway~^(motorway|trunk)$&ref~(^|;)2($|;),800,Route 2 at Haifa south
+route4-01,corridor_route4,non_urban,medium,32.0900,34.8380,highway~^(motorway|trunk|primary)$&ref~(^|;)4($|;),600,Route 4 beside Bnei Brak [verify signage]
+route4-02,corridor_route4,non_urban,medium,32.0750,34.8330,highway~^(motorway|trunk|primary)$&ref~(^|;)4($|;),600,Route 4 at Geha [verify signage]
+route4-03,corridor_route4,non_urban,medium,32.1050,34.8430,highway~^(motorway|trunk|primary)$&ref~(^|;)4($|;),600,Route 4 at Kiryat Aryeh [verify signage]
+route4-04,corridor_route4,non_urban,medium,31.8000,34.6600,highway~^(motorway|trunk|primary)$&ref~(^|;)4($|;),800,Route 4 near Ashdod [verify signage]
+route5-01,corridor_other,non_urban,high,32.1000,34.9000,highway~^motorway$&ref~(^|;)5($|;),800,Route 5 near Kesem
+route6-01,corridor_other,non_urban,high,32.2000,34.9700,highway~^motorway$&ref~(^|;)6($|;),1000,Route 6 central
+route6-02,corridor_other,non_urban,high,32.4500,35.0300,highway~^motorway$&ref~(^|;)6($|;),1000,Route 6 north
+route6-03,corridor_other,non_urban,high,31.7000,34.9000,highway~^motorway$&ref~(^|;)6($|;),1500,Route 6 south
+carmel-01,corridor_carmel_tunnel,non_urban,high,32.7950,34.9900,tunnel~^yes$&highway~^(motorway|trunk|primary)$,1500,Carmel Tunnels interior
+carmel-02,corridor_carmel_tunnel,non_urban,high,32.8050,34.9950,tunnel~^yes$&highway~^(motorway|trunk|primary)$,1500,Carmel Tunnels north tube
+begin-01,urban_arterial_begin,urban,medium,31.7600,35.1880,highway~^(motorway|trunk|primary)$&ref~(^|;)50($|;),600,Begin Blvd south (hard case: must stay urban)
+begin-02,urban_arterial_begin,urban,medium,31.7750,35.1850,highway~^(motorway|trunk|primary)$&ref~(^|;)50($|;),600,Begin Blvd centre
+begin-03,urban_arterial_begin,urban,medium,31.7900,35.1900,highway~^(motorway|trunk|primary)$&ref~(^|;)50($|;),600,Begin Blvd north
+begin-04,urban_arterial_begin,urban,medium,31.8070,35.1930,highway~^(motorway|trunk|primary)$&ref~(^|;)50($|;),700,Begin Blvd Ramot end
+namir-01,urban_arterial_namir,urban,medium,32.0950,34.7920,highway~^(trunk|primary|secondary)$&name~נמיר,500,Namir Rd (hard case: must stay urban)
+namir-02,urban_arterial_namir,urban,medium,32.1050,34.7950,highway~^(trunk|primary|secondary)$&name~נמיר,500,Namir Rd north

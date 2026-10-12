@@ -1,0 +1,308 @@
+id,group,expected,confidence,lat,lon,snap,snap_radius_m,min_loc_dist_m,note
+cbs-70,loc_city_100k,urban,high,31.79538,34.64939,,,,CBS reference point: Ashdod
+cbs-1200,loc_city_100k,urban,high,31.89609,35.00942,,,,CBS reference point: Modi'in-Makkabbim-Re'ut
+cbs-2610,loc_city_100k,urban,high,31.73178,34.98828,,,,CBS reference point: Bet Shemesh
+cbs-3000,loc_city_100k,urban,high,31.78381,35.22047,,,,CBS reference point: Jerusalem
+cbs-4000,loc_city_100k,urban,high,32.80375,35.00929,,,,CBS reference point: Haifa
+cbs-5000,loc_city_100k,urban,high,32.07638,34.78933,,,,CBS reference point: Tel Aviv - Yafo
+cbs-6100,loc_city_100k,urban,high,32.08670,34.83478,,,,CBS reference point: Bene Beraq
+cbs-6200,loc_city_100k,urban,high,32.01974,34.74991,,,,CBS reference point: Bat Yam
+cbs-6400,loc_city_100k,urban,high,32.16984,34.83295,,,,CBS reference point: Herzliyya
+cbs-6500,loc_city_100k,urban,high,32.43555,34.91834,,,,CBS reference point: Hadera
+cbs-6600,loc_city_100k,urban,high,32.01647,34.77891,,,,CBS reference point: Holon
+cbs-7100,loc_city_100k,urban,high,31.67039,34.57409,,,,CBS reference point: Ashqelon
+cbs-7400,loc_city_100k,urban,high,32.31609,34.86253,,,,CBS reference point: Netanya
+cbs-7900,loc_city_100k,urban,high,32.08505,34.88632,,,,CBS reference point: Petah Tiqwa
+cbs-8300,loc_city_100k,urban,high,31.96899,34.79975,,,,CBS reference point: Rishon LeZiyyon
+cbs-8400,loc_city_100k,urban,high,31.89168,34.80789,,,,CBS reference point: Rehovot
+cbs-8600,loc_city_100k,urban,high,32.06886,34.82417,,,,CBS reference point: Ramat Gan
+cbs-9000,loc_city_100k,urban,high,31.25382,34.78497,,,,CBS reference point: Be'er Sheva
+cbs-26,loc_town,urban,high,32.96810,35.54253,,,,CBS reference point: Rosh Pinna
+cbs-41,loc_town,urban,high,32.40773,34.92511,,,,CBS reference point: Elyakhin
+cbs-47,loc_town,urban,high,32.68704,35.42045,,,,CBS reference point: Kefar Tavor
+cbs-99,loc_town,urban,high,30.62290,34.80162,,,,CBS reference point: Mizpe Ramon
+cbs-166,loc_town,urban,high,31.78833,34.70844,,,,CBS reference point: Gan Yavne
+cbs-182,loc_town,urban,high,32.27106,34.88578,,,,CBS reference point: Even Yehuda
+cbs-229,loc_town,urban,high,32.06012,34.87503,,,,CBS reference point: Ganne Tiqwa
+cbs-326,loc_town,urban,high,32.33421,34.89077,,,,CBS reference point: Bet Yizhaq-Sh. Hefer
+cbs-447,loc_town,urban,high,32.31487,34.89639,,,,CBS reference point: Nordiyya
+cbs-565,loc_town,urban,high,32.02353,34.80736,,,,CBS reference point: Azor
+cbs-661,loc_town,urban,high,32.28900,34.99717,,,,CBS reference point: Sha'ar Efrayim
+cbs-696,loc_town,urban,high,31.99022,34.85014,,,,CBS reference point: Kefar Habad
+cbs-797,loc_town,urban,high,31.98242,34.87095,,,,CBS reference point: Ahi'ezer
+cbs-874,loc_town,urban,high,32.67799,35.24282,,,,CBS reference point: Migdal HaEmeq
+cbs-1031,loc_town,urban,high,31.52901,34.59434,,,,CBS reference point: Sederot
+cbs-1061,loc_town,urban,high,32.70860,35.32337,,,,CBS reference point: Nof HaGalil
+cbs-1098,loc_town,urban,high,31.69614,34.70658,,,,CBS reference point: Merkaz Shappira
+cbs-1139,loc_town,urban,high,32.91101,35.29163,,,,CBS reference point: Karmi'el
+cbs-1243,loc_town,urban,high,32.48609,35.10333,,,,CBS reference point: Qazir
+cbs-1268,loc_town,urban,high,31.32777,34.93098,,,,CBS reference point: Metar
+cbs-1284,loc_town,urban,high,32.75933,35.14563,,,,CBS reference point: Nofit
+cbs-1310,loc_town,urban,high,31.91737,35.03263,,,,CBS reference point: Lappid
+cbs-1330,loc_town,urban,high,32.64297,35.33806,,,,CBS reference point: Ahuzzat Baraq
+cbs-1376,loc_town,urban,high,31.70033,34.60889,,,,CBS reference point: Be'er Gannim
+cbs-2100,loc_town,urban,high,32.76120,34.97124,,,,CBS reference point: Tirat Karmel
+cbs-2500,loc_town,urban,high,32.76851,35.04167,,,,CBS reference point: Nesher
+cbs-2560,loc_town,urban,high,31.25884,35.21397,,,,CBS reference point: Arad
+cbs-2630,loc_town,urban,high,31.61118,34.76615,,,,CBS reference point: Qiryat Gat
+cbs-2800,loc_town,urban,high,33.21316,35.57461,,,,CBS reference point: Qiryat Shemona
+cbs-6700,loc_town,urban,high,32.78752,35.52353,,,,CBS reference point: Tiberias
+cbs-7000,loc_town,urban,high,31.95101,34.88839,,,,CBS reference point: Lod
+cbs-7700,loc_town,urban,high,32.61695,35.30201,,,,CBS reference point: Afula
+cbs-8500,loc_town,urban,high,31.92778,34.86660,,,,CBS reference point: Ramla
+cbs-9200,loc_town,urban,high,32.49491,35.49699,,,,CBS reference point: Bet She'an
+cbs-9500,loc_town,urban,high,32.83853,35.09019,,,,CBS reference point: Qiryat Bialik
+cbs-472,loc_arab_urban,urban,high,31.80603,35.11011,,,,CBS reference point: Abu Ghosh
+cbs-478,loc_arab_urban,urban,high,32.68162,35.32452,,,,CBS reference point: Iksal
+cbs-482,loc_arab_urban,urban,high,32.80780,35.36839,,,,CBS reference point: Bu'eine-Nujeidat
+cbs-487,loc_arab_urban,urban,high,33.02254,35.44563,,,,CBS reference point: Jish(Gush Halav)
+cbs-492,loc_arab_urban,urban,high,32.86277,35.36846,,,,CBS reference point: Deir Hanna
+cbs-497,loc_arab_urban,urban,high,32.60424,35.44497,,,,CBS reference point: Tayibe(Baemeq)
+cbs-502,loc_arab_urban,urban,high,32.95505,35.20759,,,,CBS reference point: Yirka
+cbs-507,loc_arab_urban,urban,high,32.95383,35.16304,,,,CBS reference point: Kafar Yasif
+cbs-509,loc_arab_urban,urban,high,32.74607,35.34210,,,,CBS reference point: Kafar Kanna
+cbs-512,loc_arab_urban,urban,high,32.64560,35.42208,,,,CBS reference point: Kafar Misr
+cbs-518,loc_arab_urban,urban,high,33.02729,35.25725,,,,CBS reference point: Mi'elya
+cbs-522,loc_arab_urban,urban,high,32.93496,35.31776,,,,CBS reference point: Nahef
+cbs-525,loc_arab_urban,urban,high,32.94223,35.34352,,,,CBS reference point: Sajur
+cbs-529,loc_arab_urban,urban,high,32.82667,35.18518,,,,CBS reference point: I'billin
+cbs-532,loc_arab_urban,urban,high,32.72211,35.35297,,,,CBS reference point: Ein Mahel
+cbs-536,loc_arab_urban,urban,high,32.97770,35.32777,,,,CBS reference point: Peqi'in (Buqei'a)
+cbs-538,loc_arab_urban,urban,high,32.89025,35.23523,,,,CBS reference point: Sha'ab
+cbs-543,loc_arab_urban,urban,high,32.93834,35.36709,,,,CBS reference point: Rame
+cbs-633,loc_arab_urban,urban,high,32.13108,34.97071,,,,CBS reference point: Kafar Bara
+cbs-637,loc_arab_urban,urban,high,32.49995,35.08978,,,,CBS reference point: Ar'ara
+cbs-654,loc_arab_urban,urban,high,32.50539,35.05082,,,,CBS reference point: Kafar Qara
+cbs-944,loc_arab_urban,urban,high,32.74002,35.14882,,,,CBS reference point: Basmat Tab'un
+cbs-978,loc_arab_urban,urban,high,32.75001,35.18529,,,,CBS reference point: Ka'abiyye-Tabbash-Hajajre
+cbs-998,loc_arab_urban,urban,high,32.78238,35.22215,,,,CBS reference point: Bir El-Maksur
+cbs-1292,loc_arab_urban,urban,high,32.92959,35.14682,,,,CBS reference point: Judeide-Maker
+cbs-1326,loc_arab_urban,urban,high,32.53031,35.10459,,,,CBS reference point: Basma
+cbs-2720,loc_arab_urban,urban,high,32.23381,34.95544,,,,CBS reference point: Tire
+cbs-4201,loc_arab_urban,urban,high,33.26360,35.77023,,,,CBS reference point: Majdal Shams
+cbs-4502,loc_arab_urban,urban,high,33.23709,35.73155,,,,CBS reference point: Ein Qiniyye
+cbs-7500,loc_arab_urban,urban,high,32.86465,35.29917,,,,CBS reference point: Sakhnin
+cbs-1054,loc_bedouin_negev,urban,high,31.24849,34.86060,,,,CBS reference point: Tel Sheva
+cbs-1059,loc_bedouin_negev,urban,high,31.24364,35.08918,,,,CBS reference point: Kuseife
+cbs-1060,loc_bedouin_negev,urban,high,31.32413,34.86741,,,,CBS reference point: Laqye
+cbs-1161,loc_bedouin_negev,urban,high,31.39048,34.75464,,,,CBS reference point: Rahat
+cbs-1192,loc_bedouin_negev,urban,high,31.15845,35.02339,,,,CBS reference point: Ar'ara-BaNegev
+cbs-1286,loc_bedouin_negev,urban,high,31.19701,34.83922,,,,CBS reference point: Segev-Shalom
+cbs-1303,loc_bedouin_negev,urban,high,31.29728,34.93613,,,,CBS reference point: Hura
+cbs-1339,loc_bedouin_negev,urban,medium,31.72197,34.79864,,,,CBS reference point: Al-Azy
+cbs-1342,loc_bedouin_negev,urban,high,31.14058,34.96230,,,,CBS reference point: Abu Qureinat
+cbs-1343,loc_bedouin_negev,urban,high,31.29003,35.06691,,,,CBS reference point: Makchul
+cbs-1346,loc_bedouin_negev,urban,medium,31.34417,34.74006,,,,CBS reference point: 'Tarabin as-Sani
+cbs-1347,loc_bedouin_negev,urban,high,31.08300,34.98213,,,,CBS reference point: Qasr A-Sir
+cbs-1348,loc_bedouin_negev,urban,high,31.02622,34.70182,,,,CBS reference point: Bir Hadage
+cbs-1349,loc_bedouin_negev,urban,medium,31.30106,35.07577,,,,CBS reference point: Derig'at
+cbs-1358,loc_bedouin_negev,urban,high,31.28033,34.88121,,,,CBS reference point: Umm Batin
+cbs-1359,loc_bedouin_negev,urban,high,31.28536,34.91385,,,,CBS reference point: Al Sayyid
+cbs-1360,loc_bedouin_negev,urban,high,31.25502,34.97057,,,,CBS reference point: Sa'Wa
+cbs-1367,loc_bedouin_negev,urban,medium,31.28980,35.05327,,,,CBS reference point: Kochlea
+cbs-1375,loc_bedouin_negev,urban,high,31.18416,34.93031,,,,CBS reference point: Abu Tulul
+cbs-475,loc_arab_rural,urban,medium,32.62105,35.34431,,,,CBS reference point: Dahi
+cbs-493,loc_arab_rural,urban,medium,31.77650,34.94714,,,,CBS reference point: Deir Rafat
+cbs-514,loc_arab_rural,urban,medium,31.79099,35.11506,,,,CBS reference point: Ein Rafa
+cbs-539,loc_arab_rural,urban,medium,32.78797,35.31081,,,,CBS reference point: Rummane
+cbs-540,loc_arab_rural,urban,medium,33.04941,35.48741,,,,CBS reference point: Reihaniyye
+cbs-546,loc_arab_rural,urban,medium,32.94036,35.39943,,,,CBS reference point: Ein Al-Asad
+cbs-547,loc_arab_rural,urban,medium,32.63452,35.40390,,,,CBS reference point: Tamra (Yizre'el)
+cbs-636,loc_arab_rural,urban,medium,32.52263,35.32331,,,,CBS reference point: Sandala
+cbs-649,loc_arab_rural,urban,medium,32.44469,35.04187,,,,CBS reference point: Meiser
+cbs-942,loc_arab_rural,urban,medium,32.76736,35.16817,,,,CBS reference point: Sawa'id (Humayra)
+cbs-990,loc_arab_rural,urban,medium,32.77228,35.15470,,,,CBS reference point: Ras Ali
+cbs-993,loc_arab_rural,urban,medium,32.82985,35.48998,,,,CBS reference point: Hamam
+cbs-994,loc_arab_rural,urban,medium,32.70657,35.19361,,,,CBS reference point: Manshiyyet Zabda
+cbs-1246,loc_arab_rural,urban,medium,33.08864,35.22569,,,,CBS reference point: Aramsha
+cbs-1316,loc_arab_rural,urban,medium,32.49788,35.12517,,,,CBS reference point: Al-Aryan
+cbs-1317,loc_arab_rural,urban,medium,32.81537,35.22765,,,,CBS reference point: Demeide
+cbs-1320,loc_arab_rural,urban,medium,32.69152,34.99982,,,,CBS reference point: Ein Hod
+cbs-1321,loc_arab_rural,urban,medium,32.77027,35.13667,,,,CBS reference point: Khawaled
+cbs-1331,loc_arab_rural,urban,medium,32.91321,35.35080,,,,CBS reference point: Kamane
+cbs-1332,loc_arab_rural,urban,medium,32.90025,35.32034,,,,CBS reference point: Hussniyya
+cbs-1334,loc_arab_rural,urban,medium,32.91432,35.37250,,,,CBS reference point: Ras Al-Ein
+cbs-1335,loc_arab_rural,urban,medium,32.88811,35.29025,,,,CBS reference point: Arab Al Naim
+cbs-2024,loc_arab_rural,urban,medium,32.46919,35.05638,,,,CBS reference point: Umm Al-Qutuf
+cbs-7,loc_moshav,urban,medium,31.61972,34.72551,,,,CBS reference point: Shahar
+cbs-44,loc_moshav,urban,medium,31.59540,34.69262,,,,CBS reference point: Zohar
+cbs-112,loc_moshav,urban,medium,32.75051,35.09274,,,,CBS reference point: Kefar Hasidim Alef
+cbs-165,loc_moshav,urban,medium,32.56911,35.24519,,,,CBS reference point: Nir Yafe
+cbs-205,loc_moshav,urban,medium,32.38703,34.92624,,,,CBS reference point: Hogla
+cbs-248,loc_moshav,urban,medium,32.69662,35.17824,,,,CBS reference point: Bet She'arim
+cbs-311,loc_moshav,urban,medium,31.94492,34.76106,,,,CBS reference point: Gan Soreq
+cbs-386,loc_moshav,urban,medium,32.26219,34.89908,,,,CBS reference point: Bene Deror
+cbs-430,loc_moshav,urban,medium,32.73508,35.19102,,,,CBS reference point: Bet Lehem HaGelilit
+cbs-570,loc_moshav,urban,medium,33.01630,35.26090,,,,CBS reference point: Me'ona
+cbs-607,loc_moshav,urban,medium,32.98738,35.43982,,,,CBS reference point: Meron
+cbs-670,loc_moshav,urban,medium,31.87140,34.94547,,,,CBS reference point: Mishmar Ayyalon
+cbs-689,loc_moshav,urban,medium,32.72976,34.95908,,,,CBS reference point: Megadim
+cbs-717,loc_moshav,urban,medium,32.13730,34.94708,,,,CBS reference point: Hagor
+cbs-736,loc_moshav,urban,medium,31.32798,34.65203,,,,CBS reference point: Gilat
+cbs-750,loc_moshav,urban,medium,31.32693,34.61116,,,,CBS reference point: Peduyim
+cbs-767,loc_moshav,urban,medium,32.27632,34.95027,,,,CBS reference point: Porat
+cbs-786,loc_moshav,urban,medium,32.81188,35.46345,,,,CBS reference point: Kefar Zetim
+cbs-802,loc_moshav,urban,medium,32.03142,34.93577,,,,CBS reference point: Giv'at Koah
+cbs-818,loc_moshav,urban,medium,31.68157,34.74560,,,,CBS reference point: Zerahya
+cbs-838,loc_moshav,urban,medium,31.85800,34.88259,,,,CBS reference point: Pedaya
+cbs-863,loc_moshav,urban,medium,31.96285,34.91396,,,,CBS reference point: Ginnaton
+cbs-1053,loc_moshav,urban,medium,30.79853,35.24591,,,,CBS reference point: En Hazeva
+cbs-1115,loc_moshav,urban,medium,33.08862,35.47180,,,,CBS reference point: Avivim
+cbs-1166,loc_moshav,urban,medium,31.90989,35.03070,,,,CBS reference point: Kefar Rut
+cbs-1233,loc_moshav,urban,medium,31.51491,34.93596,,,,CBS reference point: Sheqef
+cbs-1366,loc_moshav,urban,medium,31.16241,34.33394,,,,CBS reference point: Nave
+cbs-2026,loc_moshav,urban,medium,32.56527,35.56468,,,,CBS reference point: Yardena
+cbs-2053,loc_moshav,urban,medium,32.54577,35.31077,,,,CBS reference point: Perazon
+cbs-4009,loc_moshav,urban,medium,33.11647,35.71816,,,,CBS reference point: Sha'al
+cbs-16,loc_kibbutz,urban,medium,31.64845,34.87278,,,,CBS reference point: Bet Nir
+cbs-82,loc_kibbutz,urban,medium,32.55837,35.39155,,,,CBS reference point: En Harod(Me'uhad)
+cbs-134,loc_kibbutz,urban,medium,32.67681,35.22479,,,,CBS reference point: Yif'at
+cbs-192,loc_kibbutz,urban,medium,32.70092,35.27301,,,,CBS reference point: Kefar HaHoresh
+cbs-262,loc_kibbutz,urban,medium,32.84754,35.52325,,,,CBS reference point: Ginnosar
+cbs-289,loc_kibbutz,urban,medium,32.90314,35.09652,,,,CBS reference point: En HaMifraz
+cbs-308,loc_kibbutz,urban,medium,32.98906,35.57012,,,,CBS reference point: Mahanayim
+cbs-335,loc_kibbutz,urban,medium,32.61072,35.09411,,,,CBS reference point: Ramat HaShofet
+cbs-356,loc_kibbutz,urban,medium,33.22072,35.62366,,,,CBS reference point: HaGosherim
+cbs-377,loc_kibbutz,urban,medium,32.37834,34.98270,,,,CBS reference point: HaMa'pil
+cbs-407,loc_kibbutz,urban,medium,32.64785,35.34953,,,,CBS reference point: Daverat
+cbs-433,loc_kibbutz,urban,medium,32.61354,34.92081,,,,CBS reference point: Nahsholim
+cbs-457,loc_kibbutz,urban,medium,32.63916,35.44699,,,,CBS reference point: Gazit
+cbs-584,loc_kibbutz,urban,medium,31.60963,34.52175,,,,CBS reference point: Ziqim
+cbs-622,loc_kibbutz,urban,medium,31.69563,34.71921,,,,CBS reference point: En Zurim
+cbs-713,loc_kibbutz,urban,medium,31.38552,34.45932,,,,CBS reference point: Re'im
+cbs-849,loc_kibbutz,urban,medium,31.41350,34.82283,,,,CBS reference point: Dvir
+cbs-1132,loc_kibbutz,urban,medium,33.24222,35.67798,,,,CBS reference point: Senir
+cbs-1211,loc_kibbutz,urban,medium,32.89803,35.47425,,,,CBS reference point: Qaddarim
+cbs-1282,loc_kibbutz,urban,medium,32.45283,35.42212,,,,CBS reference point: Merav
+cbs-21,loc_community,urban,medium,29.71075,34.98674,,,,CBS reference point: Be'er Ora
+cbs-917,loc_community,urban,medium,32.86576,35.25177,,,,CBS reference point: Atsmon Segev
+cbs-1179,loc_community,urban,medium,32.84369,35.25263,,,,CBS reference point: Qoranit
+cbs-1190,loc_community,urban,medium,32.80253,35.38577,,,,CBS reference point: Mizpe Netofa
+cbs-1203,loc_community,urban,medium,32.84568,35.36661,,,,CBS reference point: Hararit
+cbs-1220,loc_community,urban,medium,33.03853,35.28687,,,,CBS reference point: Abbirim
+cbs-1244,loc_community,urban,medium,32.70349,35.22522,,,,CBS reference point: Timrat
+cbs-1266,loc_community,urban,medium,29.90434,34.99997,,,,CBS reference point: Shaharut
+cbs-1288,loc_community,urban,medium,32.72148,35.24540,,,,CBS reference point: Giv'at Ela
+cbs-1338,loc_community,urban,medium,33.00472,35.46414,,,,CBS reference point: Kaddita
+cbs-1365,loc_community,urban,medium,31.52863,34.93039,,,,CBS reference point: Eliav
+cbs-1378,loc_community,urban,medium,31.00216,34.76521,,,,CBS reference point: Shezaf
+cbs-22,loc_rural_other,urban,medium,32.02920,34.78135,,,,CBS reference point: Miqwe Yisra'el
+cbs-208,loc_rural_other,urban,medium,31.79381,35.15762,,,,CBS reference point: Moza Illit
+cbs-549,loc_rural_other,urban,medium,32.32067,34.90057,,,,CBS reference point: Gannot Hadar
+cbs-1044,loc_rural_other,urban,medium,32.26794,34.96637,,,,CBS reference point: Ye'af
+cbs-1133,loc_rural_other,urban,medium,31.66378,34.78195,,,,CBS reference point: Wardon
+cbs-1252,loc_rural_other,urban,medium,32.91075,35.55091,,,,CBS reference point: Korazim
+cbs-3488,loc_west_bank,urban,medium,31.64947,35.11569,,,,CBS reference point: Kefar Ezyon
+cbs-3566,loc_west_bank,urban,medium,32.06361,35.47390,,,,CBS reference point: Yafit
+cbs-3578,loc_west_bank,urban,medium,32.34698,35.53359,,,,CBS reference point: Shadmot Mehola
+cbs-3608,loc_west_bank,urban,medium,32.07125,35.40401,,,,CBS reference point: Ma'ale Efrayim
+cbs-3618,loc_west_bank,urban,high,31.66117,35.14130,,,,CBS reference point: El'azar
+cbs-3647,loc_west_bank,urban,high,32.14903,35.11183,,,,CBS reference point: Yaqir
+cbs-3658,loc_west_bank,urban,medium,32.00069,35.17707,,,,CBS reference point: Ateret
+cbs-3722,loc_west_bank,urban,medium,31.39136,34.90269,,,,CBS reference point: Eshkolot
+cbs-3747,loc_west_bank,urban,medium,31.92646,35.13320,,,,CBS reference point: Dolev
+cbs-3763,loc_west_bank,urban,high,31.84988,35.27583,,,,CBS reference point: Geva Binyamin
+cbs-3780,loc_west_bank,urban,high,31.69482,35.11250,,,,CBS reference point: Betar Illit
+cbs-3794,loc_west_bank,urban,high,31.65822,35.10092,,,,CBS reference point: Bat Ayin
+open-001,open_country,non_urban,high,29.75290,34.99900,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-002,open_country,non_urban,high,29.86390,35.04090,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-003,open_country,non_urban,high,30.00400,35.04920,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-004,open_country,non_urban,high,30.03570,35.10770,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-005,open_country,non_urban,high,30.58760,35.18240,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-006,open_country,non_urban,high,30.63650,35.21080,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-007,open_country,non_urban,high,31.02310,34.74350,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-008,open_country,non_urban,high,31.20320,34.40580,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-009,open_country,non_urban,high,31.25390,34.52840,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-010,open_country,non_urban,high,31.26620,34.37860,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-011,open_country,non_urban,high,31.28400,34.68270,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-012,open_country,non_urban,high,31.33350,34.45090,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-013,open_country,non_urban,high,31.35840,34.57760,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-014,open_country,non_urban,high,31.36100,35.00840,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-015,open_country,non_urban,high,31.38990,35.06310,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-016,open_country,non_urban,high,31.40480,34.64420,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-017,open_country,non_urban,high,31.42630,34.94140,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-018,open_country,non_urban,high,31.43910,35.13950,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-019,open_country,non_urban,high,31.47330,34.73360,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-020,open_country,non_urban,high,31.48950,35.12270,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-021,open_country,non_urban,high,31.51650,34.53200,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-022,open_country,non_urban,high,31.52570,34.73820,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-023,open_country,non_urban,high,31.52790,34.67640,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-024,open_country,non_urban,high,31.53600,35.17640,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-025,open_country,non_urban,high,31.54680,34.87790,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-026,open_country,non_urban,high,31.57430,34.71610,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-027,open_country,non_urban,high,31.58050,35.05920,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-028,open_country,non_urban,high,31.59050,34.84240,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-029,open_country,non_urban,high,31.59740,35.14390,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-030,open_country,non_urban,high,31.63460,35.04760,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-031,open_country,non_urban,high,31.65410,34.90570,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-032,open_country,non_urban,high,31.69430,34.79650,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-033,open_country,non_urban,high,31.70830,34.85970,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-034,open_country,non_urban,high,31.74950,35.10520,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-035,open_country,non_urban,high,31.75730,34.84720,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-036,open_country,non_urban,high,31.85730,35.47220,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-037,open_country,non_urban,high,31.92710,35.44570,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-038,open_country,non_urban,high,32.02780,35.20860,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-039,open_country,non_urban,high,32.08090,35.37320,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-040,open_country,non_urban,high,32.08280,35.43530,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-041,open_country,non_urban,high,32.12780,35.38290,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-042,open_country,non_urban,high,32.13880,35.45710,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-043,open_country,non_urban,high,32.15090,35.04340,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-044,open_country,non_urban,high,32.18570,35.47960,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-045,open_country,non_urban,high,32.21200,35.52470,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-046,open_country,non_urban,high,32.27390,35.15550,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-047,open_country,non_urban,high,32.29920,35.52990,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-048,open_country,non_urban,high,32.39320,35.52170,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-049,open_country,non_urban,high,32.49740,35.38920,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-050,open_country,non_urban,high,32.50010,35.21420,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-051,open_country,non_urban,high,32.55560,35.49570,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-052,open_country,non_urban,high,32.58770,35.22120,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-053,open_country,non_urban,high,32.60350,35.49580,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-054,open_country,non_urban,high,32.62810,35.16660,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-055,open_country,non_urban,high,32.65260,35.50100,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-056,open_country,non_urban,high,32.74820,35.60030,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-057,open_country,non_urban,high,32.81620,35.42910,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-058,open_country,non_urban,high,32.87610,35.54790,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-059,open_country,non_urban,high,32.87720,35.61970,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-060,open_country,non_urban,high,32.91350,35.72000,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-061,open_country,non_urban,high,32.93880,35.57760,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-062,open_country,non_urban,high,32.96860,35.77430,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-063,open_country,non_urban,high,32.99200,35.36110,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-064,open_country,non_urban,high,33.01190,35.82360,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-065,open_country,non_urban,high,33.02170,35.54410,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-066,open_country,non_urban,high,33.06550,35.79870,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-067,open_country,non_urban,high,33.06850,35.36070,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-068,open_country,non_urban,high,33.07350,35.55840,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-069,open_country,non_urban,high,33.10850,35.59980,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+open-070,open_country,non_urban,high,33.14860,35.74470,highway~^(trunk|primary|secondary|tertiary)$,2000,2500,"midpoint between rural localities, snapped to a road"
+ayalon-01,corridor_ayalon,non_urban,high,32.1005,34.8060,highway~^motorway$&ref~(^|;)20($|;),400,,Ayalon at Rokach/Yarkon
+ayalon-02,corridor_ayalon,non_urban,high,32.0840,34.7985,highway~^motorway$&ref~(^|;)20($|;),400,,Ayalon at Arlozorov/Savidor
+ayalon-03,corridor_ayalon,non_urban,high,32.0735,34.7930,highway~^motorway$&ref~(^|;)20($|;),400,,Ayalon at HaShalom/Azrieli
+ayalon-04,corridor_ayalon,non_urban,high,32.0620,34.7900,highway~^motorway$&ref~(^|;)20($|;),400,,Ayalon at HaHagana
+ayalon-05,corridor_ayalon,non_urban,high,32.0545,34.7905,highway~^motorway$&ref~(^|;)20($|;),400,,Ayalon at La Guardia
+ayalon-06,corridor_ayalon,non_urban,high,32.0440,34.7880,highway~^motorway$&ref~(^|;)20($|;),400,,Ayalon at Kibbutz Galuyot
+ayalon-07,corridor_ayalon,non_urban,high,32.0300,34.7870,highway~^motorway$&ref~(^|;)20($|;),500,,Ayalon at Holon junction
+ayalon-08,corridor_ayalon,non_urban,high,32.1150,34.8130,highway~^motorway$&ref~(^|;)20($|;),500,,Ayalon north of Yarkon
+route1-01,corridor_route1,non_urban,high,31.7960,35.1580,highway~^motorway$&ref~(^|;)1($|;),600,,Route 1 at Motza
+route1-02,corridor_route1,non_urban,high,31.7930,35.1800,highway~^(motorway|trunk)$&ref~(^|;)1($|;),600,,Route 1 Jerusalem entrance
+route1-03,corridor_route1,non_urban,high,31.8155,35.0215,highway~^motorway$&ref~(^|;)1($|;),600,,Route 1 at Sha'ar HaGai
+route1-04,corridor_route1,non_urban,high,31.8370,34.9830,highway~^motorway$&ref~(^|;)1($|;),600,,Route 1 at Latrun
+route2-01,corridor_route2,non_urban,high,32.1700,34.8170,highway~^motorway$&ref~(^|;)2($|;),600,,Route 2 at Herzliya
+route2-02,corridor_route2,non_urban,high,32.2700,34.8460,highway~^motorway$&ref~(^|;)2($|;),600,,Route 2 at Netanya Poleg
+route2-03,corridor_route2,non_urban,high,32.3200,34.8620,highway~^motorway$&ref~(^|;)2($|;),600,,Route 2 at Netanya
+route2-04,corridor_route2,non_urban,high,32.7700,34.9600,highway~^(motorway|trunk)$&ref~(^|;)2($|;),800,,Route 2 at Haifa south
+route4-01,corridor_route4,non_urban,medium,32.0900,34.8380,highway~^(motorway|trunk|primary)$&ref~(^|;)4($|;),600,,Route 4 beside Bnei Brak [verify signage]
+route4-02,corridor_route4,non_urban,medium,32.0750,34.8330,highway~^(motorway|trunk|primary)$&ref~(^|;)4($|;),600,,Route 4 at Geha [verify signage]
+route4-03,corridor_route4,non_urban,medium,32.1050,34.8430,highway~^(motorway|trunk|primary)$&ref~(^|;)4($|;),600,,Route 4 at Kiryat Aryeh [verify signage]
+route4-04,corridor_route4,non_urban,medium,31.8000,34.6600,highway~^(motorway|trunk|primary)$&ref~(^|;)4($|;),800,,Route 4 near Ashdod [verify signage]
+route5-01,corridor_other,non_urban,high,32.1000,34.9000,highway~^motorway$&ref~(^|;)5($|;),800,,Route 5 near Kesem
+route6-01,corridor_other,non_urban,high,32.2000,34.9700,highway~^motorway$&ref~(^|;)6($|;),1000,,Route 6 central
+route6-02,corridor_other,non_urban,high,32.4500,35.0300,highway~^motorway$&ref~(^|;)6($|;),1000,,Route 6 north
+route6-03,corridor_other,non_urban,high,31.7000,34.9000,highway~^motorway$&ref~(^|;)6($|;),1500,,Route 6 south
+carmel-01,corridor_carmel_tunnel,non_urban,high,32.7950,34.9900,tunnel~^yes$&highway~^(motorway|trunk|primary)$,1500,,Carmel Tunnels interior
+carmel-02,corridor_carmel_tunnel,non_urban,high,32.8050,34.9950,tunnel~^yes$&highway~^(motorway|trunk|primary)$,1500,,Carmel Tunnels north tube
+begin-01,urban_arterial_begin,urban,medium,31.7600,35.1880,highway~^(motorway|trunk|primary)$&ref~(^|;)50($|;),600,,Begin Blvd south (hard case: must stay urban)
+begin-02,urban_arterial_begin,urban,medium,31.7750,35.1850,highway~^(motorway|trunk|primary)$&ref~(^|;)50($|;),600,,Begin Blvd centre
+begin-03,urban_arterial_begin,urban,medium,31.7900,35.1900,highway~^(motorway|trunk|primary)$&ref~(^|;)50($|;),600,,Begin Blvd north
+begin-04,urban_arterial_begin,urban,medium,31.8070,35.1930,highway~^(motorway|trunk|primary)$&ref~(^|;)50($|;),700,,Begin Blvd Ramot end
+namir-01,urban_arterial_namir,urban,medium,32.0950,34.7920,highway~^(trunk|primary|secondary)$&name~נמיר,500,,Namir Rd (hard case: must stay urban)
+namir-02,urban_arterial_namir,urban,medium,32.1050,34.7950,highway~^(trunk|primary|secondary)$&name~נמיר,500,,Namir Rd north

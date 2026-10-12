@@ -1,0 +1,120 @@
+name: build
+
+# Manual only. Builds the asset twice on two independent runners from the
+# pinned inputs in config/build.json and fails if the two sha256 differ.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: build (${{ matrix.run }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [a, b]
+    env:
+      PYTHONUTF8: "1"
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12.15"
+
+      - name: Install pinned tools (hash-checked wheels only)
+        run: |
+          python -m pip install --disable-pip-version-check --no-deps --require-hashes --only-binary=:all: -r requirements.txt
+          python -m pip check
+
+      - name: Unit tests (incl. synthetic build-twice)
+        run: python -m unittest discover -s tests -v
+
+      - name: Fetch pinned inputs
+        run: |
+          mkdir -p cache out
+          OSM_URL=$(python -c "import json;print(json.load(open('config/build.json'))['sources']['osm']['url'])")
+          OSM_MD5=$(python -c "import json;print(json.load(open('config/build.json'))['sources']['osm']['md5'])")
+          CBS_URL=$(python -c "import json;print(json.load(open('config/build.json'))['sources']['cbsLocalities']['url'])")
+          CBS_SHA=$(python -c "import json;print(json.load(open('config/build.json'))['sources']['cbsLocalities']['sha256'])")
+          curl --fail --location --retry 3 --max-time 900 -o cache/osm.pbf "$OSM_URL"
+          echo "$OSM_MD5  cache/osm.pbf" | md5sum -c -
+          curl --fail --location --retry 3 --max-time 300 -o cache/cbs.xlsx "$CBS_URL"
+          echo "$CBS_SHA  cache/cbs.xlsx" | sha256sum -c -
+
+      - name: Build asset
+        run: |
+          OSM_SHA=$(python -c "import json;v=json.load(open('config/build.json'))['sources']['osm']['sha256'];print(v or '')")
+          python scripts/build.py --pbf cache/osm.pbf --out out \
+            --expect-md5 "$(python -c "import json;print(json.load(open('config/build.json'))['sources']['osm']['md5'])")" \
+            ${OSM_SHA:+--expect-sha256 "$OSM_SHA"}
+
+      - name: Committed probes match the generator
+        run: |
+          python scripts/make_probes.py --cbs cache/cbs.xlsx --out out/golden-probes.regen.csv
+          diff -u probes/golden-probes.csv out/golden-probes.regen.csv
+
+      - name: QA - golden probes (UC-Q9 >= 95%)
+        continue-on-error: true
+        run: |
+          python scripts/snap_probes.py --pbf cache/osm.pbf --cbs cache/cbs.xlsx --in probes/golden-probes.csv --out out/probes-resolved.csv
+          python scripts/run_probes.py --asset out/il-builtup.bin --probes out/probes-resolved.csv --report out/qa-probes.json
+
+      - name: QA - CBS locality coverage (UC-Q4 floors)
+        continue-on-error: true
+        run: python scripts/qa_coverage.py --asset out/il-builtup.bin --cbs cache/cbs.xlsx --report out/qa-coverage.json
+
+      - name: QA - maxspeed share
+        continue-on-error: true
+        run: python scripts/qa_maxspeed.py --pbf cache/osm.pbf --report out/qa-maxspeed.json
+
+      - name: Hashes and size gate (<= 512 KB)
+        run: |
+          cd out
+          sha256sum il-builtup.bin il-builtup.manifest.json | tee hashes.txt
+          BYTES=$(stat -c %s il-builtup.bin)
+          echo "asset bytes: $BYTES" | tee -a "$GITHUB_STEP_SUMMARY"
+          cat hashes.txt >> "$GITHUB_STEP_SUMMARY"
+          test "$BYTES" -le 524288 || { echo "::error::asset > 512 KB ($BYTES)"; exit 1; }
+
+      - name: Upload outputs
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: build-${{ matrix.run }}
+          path: |
+            out/il-builtup.bin
+            out/il-builtup.manifest.json
+            out/qa-*.json
+            out/probes-resolved.csv
+            out/hashes.txt
+          if-no-files-found: warn
+          retention-days: 30
+
+  determinism:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          path: art
+      - name: Compare the two independent builds
+        run: |
+          cat art/build-a/hashes.txt art/build-b/hashes.txt
+          cmp art/build-a/il-builtup.bin art/build-b/il-builtup.bin
+          cmp art/build-a/il-builtup.manifest.json art/build-b/il-builtup.manifest.json
+          echo "DETERMINISTIC: $(sha256sum art/build-a/il-builtup.bin | cut -d' ' -f1)" | tee -a "$GITHUB_STEP_SUMMARY"
