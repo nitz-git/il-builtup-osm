@@ -91,7 +91,8 @@ class RulesTest(unittest.TestCase):
         self.assertEqual(R.corridor_buffer_m({"highway": "trunk", "tunnel": "yes"}, RULES, 200), 0)
 
     def test_admin_fallback_candidate(self):
-        fb = json.load(open(os.path.join(ROOT, "config", "build.json"), encoding="utf-8"))["adminFallback"]
+        with open(os.path.join(ROOT, "config", "build.json"), encoding="utf-8") as f:
+            fb = json.load(f)["adminFallback"]
         base = {"boundary": "administrative", "admin_level": "8"}
         self.assertTrue(R.is_admin_fallback_candidate(dict(base, name="מגדל העמק"), fb))
         self.assertFalse(R.is_admin_fallback_candidate(dict(base, name="מועצה אזורית מטה יהודה"), fb))
@@ -99,6 +100,7 @@ class RulesTest(unittest.TestCase):
         self.assertFalse(R.is_admin_fallback_candidate(dict(base, name="מועצה תעשייתית תפן"), fb))
         self.assertFalse(R.is_admin_fallback_candidate({"boundary": "administrative", "admin_level": "6", "name": "x"}, fb))
         self.assertFalse(R.is_admin_fallback_candidate(dict(base), fb))  # nameless
+        self.assertFalse(R.is_admin_fallback_candidate(dict(base, name="מגדל תפן"), fb))  # industrial local council
 
     def test_overrides(self):
         o = {"add": {"7": {"bufferM": 20, "reason": "x"}}, "remove": {"8": {"reason": "y"}}}

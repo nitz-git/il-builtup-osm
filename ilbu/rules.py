@@ -115,6 +115,8 @@ def is_admin_fallback_candidate(tags, fb):
     name = (tags.get("name") or "").strip()
     if not name:
         return False
+    if name in fb.get("excludeNames", []):
+        return False
     if any(name.startswith(p) for p in fb["excludeNamePrefixes"]):
         return False
     if re.search(fb["excludeNameEnRegex"], tags.get("name:en") or ""):
