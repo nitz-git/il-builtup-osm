@@ -1,0 +1,42 @@
+{
+  "datasetName": "il-builtup-osm",
+  "formatVersion": 1,
+  "sources": {
+    "osm": {
+      "url": "https://download.geofabrik.de/asia/israel-and-palestine-261001.osm.pbf",
+      "md5": "9e0f3b3ceee770b970c9665979e3a7ae",
+      "md5Source": "https://download.geofabrik.de/asia/israel-and-palestine-261001.osm.pbf.md5",
+      "sha256": null,
+      "note": "sha256 is null until the first Actions run records it in the manifest; then pin it here (reviewed commit). md5 is Geofabrik's own published checksum."
+    },
+    "cbsLocalities": {
+      "url": "https://www.cbs.gov.il/he/publications/doclib/2019/ishuvim/bycode2024.xlsx",
+      "sha256": "a021c6a151863ded624d2f674f9bbcf90ba9f3660c8d55aebe6526ff7f5d2ad0",
+      "retrieved": "2026-10-12",
+      "use": "QA only (coverage report). Never part of the asset."
+    }
+  },
+  "rules": {
+    "builtupLanduse": ["residential", "commercial", "retail"],
+    "builtupPlace": ["city", "town", "village", "hamlet", "suburb", "quarter", "neighbourhood", "isolated_dwelling"],
+    "placeExcludeIfKeys": ["boundary", "admin_level"],
+    "industrialLanduse": ["industrial"],
+    "industrialAdjacencyM": 50,
+    "corridorAlways": {"motorway": 35, "motorway_link": 15},
+    "corridorConditional": {"trunk": 25, "trunk_link": 12, "primary": 25, "primary_link": 12},
+    "conditionalMaxspeedOverKmh": 80,
+    "nonUrbanZoneValues": ["IL:rural", "IL:motorway"],
+    "nonUrbanZoneKeys": ["maxspeed", "maxspeed:type", "source:maxspeed", "zone:traffic"],
+    "tunnelCorridorMinLenM": 500,
+    "tunnelCorridorBufferM": 30
+  },
+  "geometry": {
+    "metricCrs": "EPSG:32636",
+    "closingM": 30,
+    "holeFillMaxM2": 2000000,
+    "simplifyToleranceM": 12,
+    "minPolygonM2": 2000,
+    "minHoleM2": 2000,
+    "quantScale": 100000
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "_doc": "Reviewed per-way corridor overrides. Keys are OSM way IDs (strings). 'add' forces a way to be a corridor with the given buffer; 'remove' stops a way being a corridor. Every entry needs a reason and is reviewed like code. Empty in U1: entries are added in U3 from golden-probe misses and labelled drives (PLAN.md section 11, corridor mistagging).",
+  "add": {},
+  "remove": {}
+}
