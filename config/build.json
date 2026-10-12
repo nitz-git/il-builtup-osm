@@ -44,7 +44,7 @@
     "maxSettlementNodes": 2,
     "settlementPlaceValues": ["city", "town", "village", "hamlet"],
     "maxAreaKm2": 50,
-    "maxBuiltupShare": 0.15,
+    "maxBuiltupShare": 0.01,
     "nonBuiltLanduse": ["farmland", "orchard", "meadow", "vineyard", "forest", "grass", "farmyard", "plant_nursery", "greenhouse_horticulture"],
     "nonBuiltNatural": ["wood", "scrub", "grassland", "heath", "bare_rock", "sand"],
     "boardNonBuiltLanduse": ["farmland", "orchard", "meadow"]

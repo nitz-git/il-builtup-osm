@@ -53,9 +53,17 @@ Implemented in `ilbu/rules.py` and `ilbu/geom.py`; all numbers in
         nodes. A regional council contains many settlements; a city or
         local council contains its own.
      3. The polygon is larger than 50 km².
+   - Industrial local councils (`מגדל תפן`, `נאות חובב`) are excluded by
+     name (`excludeNames`). They are industrial parks, not localities, which
+     is the same reason as the isolated-industrial rule.
    - **"Footprint absent":** the share of the municipal polygon covered by
      built-up polygons (step 1, before closing) is below
-     `maxBuiltupShare`. The share is computed in metres (UTM 36N) as
+     `maxBuiltupShare` = **1%**. The 1% allows for slivers of neighbouring
+     polygons that cross the boundary. Variant B (15%) was tested on
+     Actions (run 38218925611): it chose 41 municipalities and 557 km², 57%
+     of it mapped as non-built, and it replaced footprints that were already
+     mapped (e.g. Rosh Pinna's `boundary=place`). That is "partly mapped",
+     not "absent", so it was rejected. The share is computed in metres (UTM 36N) as
      area(union(built-up ∩ municipality)) / area(municipality).
    - **QA:** for each candidate, `qa-build.json` reports the decision,
      share, area and settlement count. For each selected fallback it also
