@@ -41,11 +41,13 @@ def fill_small_holes(poly, max_m2):
     return Polygon(poly.exterior, holes)
 
 
-def build(builtup_m, industrial_m, corridors_m, gp, rules):
+def build(builtup_m, industrial_m, corridors_m, gp, rules, extra_m=None):
     """All inputs in metric CRS.
 
     builtup_m: list of polygons; industrial_m: list of polygons;
     corridors_m: list of (LineString, buffer_m).
+    extra_m: polygons added as-is after closing/hole filling and before the
+    corridor subtraction (PL-Q21 municipal fallbacks).
     Returns (list of metric polygons, stats dict).
     """
     stats = {}
@@ -69,6 +71,9 @@ def build(builtup_m, industrial_m, corridors_m, gp, rules):
     closed = shapely.union_all([closed, base], grid_size=0.01)
     filled = [fill_small_holes(p, gp["holeFillMaxM2"]) for p in _polys(closed)]
     area = shapely.union_all(filled, grid_size=0.01)
+    if extra_m:
+        area = shapely.union_all([area] + list(extra_m), grid_size=0.01)
+        stats["fallbackPolygons"] = len(extra_m)
 
     if corridors_m:
         bufs = [ln.buffer(w, quad_segs=4, cap_style="flat") for ln, w in corridors_m if w > 0]

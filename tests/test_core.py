@@ -90,6 +90,16 @@ class RulesTest(unittest.TestCase):
         self.assertEqual(R.corridor_buffer_m({"highway": "trunk", "tunnel": "yes"}, RULES, 3000), 30)
         self.assertEqual(R.corridor_buffer_m({"highway": "trunk", "tunnel": "yes"}, RULES, 200), 0)
 
+    def test_admin_fallback_candidate(self):
+        fb = json.load(open(os.path.join(ROOT, "config", "build.json"), encoding="utf-8"))["adminFallback"]
+        base = {"boundary": "administrative", "admin_level": "8"}
+        self.assertTrue(R.is_admin_fallback_candidate(dict(base, name="מגדל העמק"), fb))
+        self.assertFalse(R.is_admin_fallback_candidate(dict(base, name="מועצה אזורית מטה יהודה"), fb))
+        self.assertFalse(R.is_admin_fallback_candidate(dict(base, name="X", **{"name:en": "Emek Regional Council"}), fb))
+        self.assertFalse(R.is_admin_fallback_candidate(dict(base, name="מועצה תעשייתית תפן"), fb))
+        self.assertFalse(R.is_admin_fallback_candidate({"boundary": "administrative", "admin_level": "6", "name": "x"}, fb))
+        self.assertFalse(R.is_admin_fallback_candidate(dict(base), fb))  # nameless
+
     def test_overrides(self):
         o = {"add": {"7": {"bufferM": 20, "reason": "x"}}, "remove": {"8": {"reason": "y"}}}
         self.assertEqual(R.apply_overrides(7, 0, o), 20)
@@ -149,6 +159,13 @@ class SyntheticBuildTest(unittest.TestCase):
         self.assertTrue(lk.locate(31.509, 34.903)[0])              # on the 50 km/h primary: still urban
         self.assertTrue(lk.locate(31.603, 35.003)[0])              # boundary=place village
         self.assertFalse(lk.locate(31.70, 35.10)[0])               # open country
+        fbq = qa["adminFallback"]
+        self.assertEqual(fbq["selectedCount"], 1)                    # footprint-less local council
+        self.assertEqual(fbq["decisions"].get("settlement_count"), 1)  # unprefixed regional council (3 villages)
+        self.assertGreater(fbq["selectedFarmlandOrchardMeadowKm2"], 0.1)
+        self.assertTrue(lk.locate(31.81, 34.91)[0])                # inside the local council fallback
+        self.assertFalse(lk.locate(31.815, 35.015)[0])             # named regional council: never
+        self.assertFalse(lk.locate(31.82, 35.12)[0])               # unprefixed regional council: guard
 
 
 if __name__ == "__main__":

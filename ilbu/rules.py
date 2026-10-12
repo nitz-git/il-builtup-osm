@@ -98,3 +98,32 @@ def apply_overrides(way_id, buffer_m, overrides):
     if key in overrides.get("add", {}):
         return float(overrides["add"][key]["bufferM"])
     return buffer_m
+
+
+def is_admin_fallback_candidate(tags, fb):
+    """Municipal admin boundary that may serve as a fallback footprint
+    (Board PL-Q21 b). Tag-level test only; build.py adds the settlement-count,
+    area and built-up-share guards.
+
+    In Israeli OSM, cities, local councils AND regional councils are all
+    boundary=administrative + admin_level=8. Regional councils are told apart
+    by their name prefix ("מועצה אזורית ..."); the settlement-count guard in
+    build.py catches any that lack it.
+    """
+    if tags.get("boundary") != fb["boundaryValue"] or tags.get("admin_level") != fb["adminLevel"]:
+        return False
+    name = (tags.get("name") or "").strip()
+    if not name:
+        return False
+    if any(name.startswith(p) for p in fb["excludeNamePrefixes"]):
+        return False
+    if re.search(fb["excludeNameEnRegex"], tags.get("name:en") or ""):
+        return False
+    return True
+
+
+def is_non_built(tags, fb, board_only=False):
+    lu = fb["boardNonBuiltLanduse"] if board_only else fb["nonBuiltLanduse"]
+    if tags.get("landuse") in lu:
+        return True
+    return (not board_only) and tags.get("natural") in fb["nonBuiltNatural"]

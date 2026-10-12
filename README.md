@@ -6,6 +6,12 @@ by a mobile app to estimate, on the phone, whether driving time was on urban or
 non-urban roads. The layer holds geometry only: no place names, no IDs, no
 user data.
 
+Rule in one line: built-up OSM areas (`landuse=residential|commercial|retail`,
+settlement `place=*` areas incl. `boundary=place`), plus, for a city or local
+council with no mapped footprint, its municipal boundary (`admin_level=8`,
+never a regional council; Board PL-Q21); minus buffered motorway and fast-road
+corridors. Details and parameters: `PROVENANCE.md`, `config/build.json`.
+
 **Data: © OpenStreetMap contributors, available under the Open Database
 License (ODbL) 1.0.** See `LICENSE-DATA-ODbL-1.0.txt` and
 <https://www.openstreetmap.org/copyright>.

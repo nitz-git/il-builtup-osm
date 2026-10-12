@@ -32,6 +32,21 @@
     "tunnelCorridorMinLenM": 500,
     "tunnelCorridorBufferM": 30
   },
+  "adminFallback": {
+    "_doc": "Board PL-Q21 (b), 2026-10-12: a city or local council whose OSM built-up footprint is absent uses its municipal admin boundary, minus the same corridors. Never regional councils. See PROVENANCE.md.",
+    "enabled": true,
+    "boundaryValue": "administrative",
+    "adminLevel": "8",
+    "excludeNamePrefixes": ["מועצה אזורית", "מועצה תעשייתית", "מ.א.", "מ\"א"],
+    "excludeNameEnRegex": "(?i)regional\\s+council|industrial\\s+council",
+    "maxSettlementNodes": 2,
+    "settlementPlaceValues": ["city", "town", "village", "hamlet"],
+    "maxAreaKm2": 50,
+    "maxBuiltupShare": 0.01,
+    "nonBuiltLanduse": ["farmland", "orchard", "meadow", "vineyard", "forest", "grass", "farmyard", "plant_nursery", "greenhouse_horticulture"],
+    "nonBuiltNatural": ["wood", "scrub", "grassland", "heath", "bare_rock", "sand"],
+    "boardNonBuiltLanduse": ["farmland", "orchard", "meadow"]
+  },
   "geometry": {
     "metricCrs": "EPSG:32636",
     "closingM": 30,

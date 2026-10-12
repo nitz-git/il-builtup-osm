@@ -36,7 +36,35 @@ Implemented in `ilbu/rules.py` and `ilbu/geom.py`; all numbers in
    `IL:motorway` in `maxspeed`, `maxspeed:type`, `source:maxspeed` or
    `zone:traffic`); any of those classes in a tunnel at least 500 m long: 30 m.
    Per-way overrides live in `config/corridor-overrides.json` with a reason.
-5. Simplify (12 m, topology-preserving), drop polygons and holes under
+5. **Municipal-boundary fallback (Board decision PL-Q21 (b), 2026-10-12).**
+   Some cities and local councils have no built-up footprint in OSM: only a
+   `boundary=administrative` + `admin_level=8` relation. For those, the
+   municipal boundary itself is used as the urban area. It is added after
+   step 3 and before step 4, so the same corridors are cut out of it.
+   Parameters are in `config/build.json` under `adminFallback`.
+   - **Candidate:** `boundary=administrative`, `admin_level=8` and a `name`.
+     In Israeli OSM, cities, local councils **and regional councils** all
+     use `admin_level=8`. Regional councils are never used. Three
+     independent guards exclude them:
+     1. The name starts with `מועצה אזורית` (also `מועצה תעשייתית`,
+        `מ.א.`, `מ"א`), or `name:en` matches "Regional Council" /
+        "Industrial Council".
+     2. The polygon contains more than 2 OSM `place=city|town|village|hamlet`
+        nodes. A regional council contains many settlements; a city or
+        local council contains its own.
+     3. The polygon is larger than 50 km².
+   - **"Footprint absent":** the share of the municipal polygon covered by
+     built-up polygons (step 1, before closing) is below
+     `maxBuiltupShare`. The share is computed in metres (UTM 36N) as
+     area(union(built-up ∩ municipality)) / area(municipality).
+   - **QA:** for each candidate, `qa-build.json` reports the decision,
+     share, area and settlement count. For each selected fallback it also
+     reports the non-built area inside it, from OSM
+     `landuse=farmland|orchard|meadow|…` and `natural=wood|scrub|…`. That
+     is the accepted over-credit risk.
+   - The CBS file is not used for the selection; it is used only to
+     report coverage.
+6. Simplify (12 m, topology-preserving), drop polygons and holes under
    2,000 m², reproject to WGS84 and quantise to 1e-5°.
 
 The app adds a speed veto (sustained Doppler speed >= 85 km/h = non-urban) and
