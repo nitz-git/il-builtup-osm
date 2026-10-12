@@ -59,6 +59,10 @@ class RulesTest(unittest.TestCase):
         self.assertTrue(R.is_builtup({"place": "village"}, RULES))
         # place on an admin boundary = jurisdiction, not footprint
         self.assertFalse(R.is_builtup({"place": "city", "boundary": "administrative"}, RULES))
+        self.assertFalse(R.is_builtup({"place": "town", "admin_level": "8"}, RULES))
+        # Israeli locality relations: boundary=place is the settlement extent
+        self.assertTrue(R.is_builtup({"type": "boundary", "boundary": "place", "place": "town"}, RULES))
+        self.assertTrue(R.is_builtup({"type": "boundary", "boundary": "place", "place": "village"}, RULES))
         self.assertFalse(R.is_builtup({"landuse": "farmland"}, RULES))
         self.assertFalse(R.is_builtup({"landuse": "industrial"}, RULES))
         self.assertTrue(R.is_industrial({"landuse": "industrial"}, RULES))
@@ -132,12 +136,13 @@ class SyntheticBuildTest(unittest.TestCase):
                     qa = json.load(f)
         self.assertEqual(hashes[0], hashes[1])
         self.assertEqual(qa["geometry"]["industrialKept"], 1)      # isolated park dropped
-        self.assertEqual(qa["inputs"]["builtupAreas"], 1)          # admin boundary ignored
+        self.assertEqual(qa["inputs"]["builtupAreas"], 2)          # town + boundary=place village; admin boundary ignored
         self.assertEqual(qa["inputs"]["corridorWaysUsed"], 1)      # 50 km/h primary is not a corridor
         lk = Lookup(codec.decode(blob))
         self.assertTrue(lk.locate(31.503, 34.903)[0])              # town
         self.assertFalse(lk.locate(31.509, 34.909)[0])             # motorway corridor through town
         self.assertTrue(lk.locate(31.509, 34.903)[0])              # on the 50 km/h primary: still urban
+        self.assertTrue(lk.locate(31.603, 35.003)[0])              # boundary=place village
         self.assertFalse(lk.locate(31.70, 35.10)[0])               # open country
 
 

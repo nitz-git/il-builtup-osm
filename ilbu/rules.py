@@ -33,7 +33,11 @@ def is_builtup(tags, rules):
     if tags.get("place") in rules["builtupPlace"]:
         # A place tag on an administrative boundary is jurisdiction, not
         # footprint (regional councils cover open roads): never use it.
-        return not any(k in tags for k in rules["placeExcludeIfKeys"])
+        # boundary=place IS the settlement extent (Israeli locality relations
+        # since the 2025 refresh: type=boundary + boundary=place + place=*).
+        if any(k in tags for k in rules["placeExcludeIfKeys"]):
+            return False
+        return not any(tags.get(k) in v for k, v in rules["placeExcludeIfTags"].items())
     return False
 
 

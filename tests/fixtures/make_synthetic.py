@@ -1,5 +1,5 @@
 """Writes tests/fixtures/synthetic.osm: a fictional 2 km town near 31.5N 34.9E
-with a motorway through it, a 50 km/h primary, an attached and an isolated
+with a motorway through it, a boundary=place village, a 50 km/h primary, an attached and an isolated
 industrial area, and an admin boundary carrying place=* (must be ignored).
 Synthetic coordinates only; no real map data."""
 import os
@@ -18,6 +18,7 @@ way(square(LAT0, LON0, D, D), {"landuse": "residential", "place": "town", "name"
 way(square(LAT0, LON0 + D + 0.0002, 0.005, 0.005), {"landuse": "industrial"})
 way(square(LAT0 + 0.2, LON0 + 0.2, 0.005, 0.005), {"landuse": "industrial"})
 way(square(LAT0 - 0.05, LON0 - 0.05, 0.12, 0.12), {"boundary": "administrative", "admin_level": "8", "place": "city"})
+way(square(LAT0 + 0.1, LON0 + 0.1, 0.006, 0.006), {"boundary": "place", "place": "village"})
 way([node(LAT0 - 0.01, LON0 + D / 2), node(LAT0 + D + 0.01, LON0 + D / 2)], {"highway": "motorway", "maxspeed": "100"})
 way([node(LAT0 + D / 2, LON0 - 0.01), node(LAT0 + D / 2, LON0 + D + 0.01)], {"highway": "primary", "maxspeed": "50"})
 out = ['<?xml version="1.0" encoding="UTF-8"?>',

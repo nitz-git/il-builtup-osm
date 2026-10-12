@@ -4,8 +4,11 @@ matching OSM way (from the pinned PBF). Probes without a spec pass through.
 
 Snap spec: conditions joined by '&', each `key~regex` (all must match).
 A probe whose seed has no matching way within snap_radius_m, or whose snapped
-point is closer than min_loc_dist_m to any CBS locality point, is marked
-`unresolved` and is reported (not scored).
+point is too close to a settlement, is marked `unresolved` and is reported
+(not scored). "Too close" = within min_loc_dist_m of a CBS locality point, or
+within PLACE_DIST_M of an OSM place node (city/town/village/hamlet). The OSM
+place nodes cover settlements the CBS list omits (Palestinian towns,
+unrecognised villages); only their point position is used, never polygons.
 
 Usage: python scripts/snap_probes.py --pbf X.pbf --cbs bycode.xlsx \
           --in probes/golden-probes.csv --out out/probes-resolved.csv
@@ -24,6 +27,8 @@ import osmium
 from ilbu import cbs
 
 K = 111320.0
+PLACE_DIST_M = {"city": 6000, "town": 4000, "village": 2500, "hamlet": 2000}
+SNAP_TAGS = ("highway", "ref", "maxspeed", "tunnel", "name")
 
 
 def parse_spec(spec):
@@ -68,9 +73,16 @@ def main():
     best = {}
     deg_pad = 0.03
     fp = osmium.FileProcessor(a.pbf, osmium.osm.NODE | osmium.osm.WAY).with_locations() \
-        .with_filter(osmium.filter.KeyFilter("highway"))
+        .with_filter(osmium.filter.KeyFilter("highway", "place"))
+    places = []
+    way_tags = {}
     for obj in fp:
-        if not obj.is_way():
+        if obj.is_node():
+            pv = obj.tags.get("place")
+            if pv in PLACE_DIST_M and obj.location.valid():
+                places.append((obj.location.lat, obj.location.lon, PLACE_DIST_M[pv]))
+            continue
+        if not obj.is_way() or "highway" not in obj.tags:
             continue
         tags = {t.k: t.v for t in obj.tags}
         coords = None
@@ -94,12 +106,14 @@ def main():
             key = p["id"]
             if r and r[0] <= float(p["snap_radius_m"]) and (key not in best or (r[0], obj.id) < best[key][:2]):
                 best[key] = (r[0], obj.id, r[1], r[2])
+                way_tags[obj.id] = ";".join("%s=%s" % (k, tags[k]) for k in SNAP_TAGS if k in tags)
 
     locs = cbs.universe(cbs.load(a.cbs))
     for p in probes:
         p["status"] = "ok"
         p["snap_way"] = ""
         p["snap_moved_m"] = ""
+        p["snap_tags"] = ""
         if not p["snap"]:
             continue
         b = best.get(p["id"])
@@ -108,6 +122,7 @@ def main():
             continue
         p["snap_moved_m"] = "%.0f" % b[0]
         p["snap_way"] = str(b[1])
+        p["snap_tags"] = way_tags.get(b[1], "")
         p["lat"], p["lon"] = "%.6f" % b[2], "%.6f" % b[3]
         if p["min_loc_dist_m"]:
             lat, lon = b[2], b[3]
@@ -115,6 +130,8 @@ def main():
             kx = K * math.cos(math.radians(lat))
             if any(math.hypot((r["lat"] - lat) * K, (r["lon"] - lon) * kx) < need for r in locs):
                 p["status"] = "unresolved:near_locality"
+            elif any(math.hypot((q[0] - lat) * K, (q[1] - lon) * kx) < q[2] for q in places):
+                p["status"] = "unresolved:near_osm_place"
 
     cols = list(probes[0].keys())
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)

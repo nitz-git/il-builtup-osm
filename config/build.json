@@ -19,7 +19,8 @@
   "rules": {
     "builtupLanduse": ["residential", "commercial", "retail"],
     "builtupPlace": ["city", "town", "village", "hamlet", "suburb", "quarter", "neighbourhood", "isolated_dwelling"],
-    "placeExcludeIfKeys": ["boundary", "admin_level"],
+    "placeExcludeIfKeys": ["admin_level"],
+    "placeExcludeIfTags": {"boundary": ["administrative", "political", "census"]},
     "industrialLanduse": ["industrial"],
     "industrialAdjacencyM": 50,
     "corridorAlways": {"motorway": 35, "motorway_link": 15},
