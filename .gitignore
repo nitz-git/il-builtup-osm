@@ -1,0 +1,6 @@
+cache/
+out/
+*.pbf
+__pycache__/
+*.pyc
+tests/fixtures/synthetic.osm
