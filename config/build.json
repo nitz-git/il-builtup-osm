@@ -6,8 +6,8 @@
       "url": "https://download.geofabrik.de/asia/israel-and-palestine-261001.osm.pbf",
       "md5": "9e0f3b3ceee770b970c9665979e3a7ae",
       "md5Source": "https://download.geofabrik.de/asia/israel-and-palestine-261001.osm.pbf.md5",
-      "sha256": null,
-      "note": "sha256 is null until the first Actions run records it in the manifest; then pin it here (reviewed commit). md5 is Geofabrik's own published checksum."
+      "sha256": "957d19ff058951e0d6eab60a8ea3685896a3cc298c85626fc54abad6d9a58769",
+      "note": "Pinned from the Actions manifests of runs 3 and C (replication timestamp 2026-10-01T20:22:06Z); the build fails if the download differs. md5 is Geofabrik's own published checksum."
     },
     "cbsLocalities": {
       "url": "https://www.cbs.gov.il/he/publications/doclib/2019/ishuvim/bycode2024.xlsx",
